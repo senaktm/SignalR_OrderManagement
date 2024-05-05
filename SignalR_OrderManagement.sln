@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR_API", "SignalR_API\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR_WebUI", "SignalR_WebUI\SignalR_WebUI.csproj", "{E9AB8B5C-4601-4700-9C5C-15D325786D0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR_EntityLayer", "SignalR_EntityLayer\SignalR_EntityLayer.csproj", "{33AE635D-11C4-4355-AADD-5ED3DE526EC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.EntityLayer", "SignalR_EntityLayer\SignalR.EntityLayer.csproj", "{33AE635D-11C4-4355-AADD-5ED3DE526EC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
