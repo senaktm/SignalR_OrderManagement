@@ -9,5 +9,10 @@
         public string ProductImageUrl { get; set; }
         public bool ProductStatus { get; set; }
 
+
+        //Creating Relations between Product and Category Table
+        public int CategoryID { get; set; }
+        public Category Category { get; set; }
+
     }
 }
