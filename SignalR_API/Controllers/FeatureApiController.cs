@@ -68,7 +68,7 @@ namespace SignalR_API.Controllers
             return Ok("Feature güncellendi");
 
         }
-        [HttpGet("GetFeature")]
+        [HttpGet("{id}")]
         public IActionResult GetFeature(int id) 
         {
             var value = _featureService.TGetByID(id);

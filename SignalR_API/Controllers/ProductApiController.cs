@@ -72,7 +72,7 @@ namespace SignalR_API.Controllers
             return Ok(value);
         }
 
-        [HttpGet("GetProductListWithCategory")]
+        [HttpGet("{id}")]
         public IActionResult ProductListWithCategory(int id)
         {
             var values = _mapper.Map<List<ResultProductWithCategoryDto>>(_productService.TGetProductsWithCategories());

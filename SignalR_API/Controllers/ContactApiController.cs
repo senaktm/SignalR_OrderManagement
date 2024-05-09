@@ -64,7 +64,7 @@ namespace SignalR_API.Controllers
             return Ok("Contact güncellendi");
         }
 
-        [HttpGet("GetContact")]
+        [HttpGet("{id}")]
         public IActionResult GetContact(int id)
         {
             var value = _contactService.TGetByID(id);
