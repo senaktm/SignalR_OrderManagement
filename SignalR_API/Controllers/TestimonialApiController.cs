@@ -41,7 +41,7 @@ namespace SignalR_API.Controllers
             return Ok("Testimonial eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteTestimonial(int id)
         {
             var value = _testimonialService.TGetByID(id);

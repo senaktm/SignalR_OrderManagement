@@ -33,7 +33,7 @@ namespace SignalR_API.Controllers
             _aboutService.TAdd(about);
             return Ok("About alanı eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteAbout(int id) 
         {
             var value = _aboutService.TGetByID(id);

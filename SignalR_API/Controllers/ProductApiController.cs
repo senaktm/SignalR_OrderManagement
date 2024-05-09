@@ -35,13 +35,14 @@ namespace SignalR_API.Controllers
                 ProductName = createProductDto.ProductName,
                 ProductImageUrl = createProductDto.ProductImageUrl,
                 ProductPrice = createProductDto.ProductPrice,
-                ProductStatus = createProductDto.ProductStatus
+                ProductStatus = createProductDto.ProductStatus,
+                CategoryID = createProductDto.CategoryID,
             });
             
             return Ok("Product eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {
             var value = _productService.TGetByID(id);
@@ -59,20 +60,21 @@ namespace SignalR_API.Controllers
                 ProductName = updateProductDto.ProductName,
                 ProductImageUrl = updateProductDto.ProductImageUrl,
                 ProductPrice = updateProductDto.ProductPrice,
-                ProductStatus = updateProductDto.ProductStatus
+                ProductStatus = updateProductDto.ProductStatus,
+                 CategoryID = updateProductDto.CategoryID,
             });
           
             return Ok("Product güncellendi");
         }
 
-        [HttpGet("GetProduct")]
+        [HttpGet("{id}")]
         public IActionResult GetProduct(int id)
         {
             var value = _productService.TGetByID(id);
             return Ok(value);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("ProductListWithCategory")]
         public IActionResult ProductListWithCategory(int id)
         {
             var values = _mapper.Map<List<ResultProductWithCategoryDto>>(_productService.TGetProductsWithCategories());

@@ -41,7 +41,7 @@ namespace SignalR_API.Controllers
             return Ok("Contact kaydedildi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteContact(int id) 
         {
             var value = _contactService.TGetByID(id);

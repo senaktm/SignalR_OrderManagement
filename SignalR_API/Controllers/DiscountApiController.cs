@@ -41,7 +41,7 @@ namespace SignalR_API.Controllers
             return Ok("Discount eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteDiscount(int id)
         {
             var value = _discountService.TGetByID(id);
