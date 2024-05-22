@@ -1,0 +1,53 @@
+﻿@model SignalR_WebUI.Dtos.DiscountDtos.UpdateDiscountDto
+@{
+    ViewData["Title"] = "UpdateDiscount";
+    Layout = "~/Views/AdminLayout/AdminLayout.cshtml";
+}
+
+@* <h1>UpdateDiscount</h1> *@
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Discount Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Add Discount</div>
+                        </div>
+
+
+                        <div class="card-body">
+                            <input type="hidden" asp-for="DiscountID" />
+                            <div class="form-group">
+                                <label for="discountTitle">Discount Title :</label>
+                                <input type="text" class="form-control" id="discountTitle" asp-for="DiscountTitle" placeholder="Enter Discount Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="discountAmount">Discount Amount :</label>
+                                <input type="text" class="form-control" id="discountAmount" asp-for="DiscountAmount" placeholder="Enter Discount Amount">
+                            </div>
+                            <div class="form-group">
+                                <label for="discountDescription">Discount Description :</label>
+                                <input type="text" class="form-control" id="discountDescription" asp-for="DiscountDescription" placeholder="Enter Discount Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="discountImageUrl">Discount ImageUrl :</label>
+                                <input type="text" class="form-control" id="discountImageUrl" asp-for="DiscountImageUrl" placeholder="Enter Discount ImageUrl">
+                            </div>
+
+
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Edit Discount</button>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
