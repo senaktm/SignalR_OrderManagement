@@ -1,0 +1,62 @@
+﻿@model List<SignalR_WebUI.Dtos.TestimonialDtos.ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/AdminLayout.cshtml";
+}
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Testimonial Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Testimonial List</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            You can make Testimonial transactions from the table below
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Testimonial Name</th>
+                                    <th scope="col">Testimonial Title</th>
+                                    <th scope="col">Testimonial Comment</th>
+                                    <th scope="col">Testimonial ImageUrl</th>
+                                    <th scope="col">Testimonial Status</th>
+                                    <th scope="col">Delete</th>
+                                    <th scope="col">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.TestimonialID</td>
+                                        <td>@item.TestimonialName</td>
+                                        <td>@item.TestimonialTitle</td>
+                                        <td>@item.TestimonialComment</td>
+                                        <td>@item.TestimonialImageUrl</td>
+                                        <td>@item.TestimonialStatus</td>
+
+                                        <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-danger">Delete</a></td>
+                                        <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-primary">Edit</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+
+                        </table>
+                        <td><a href="/Testimonial/CreateTestimonial/" class="btn btn-success">Add New Testimonial</a></td>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

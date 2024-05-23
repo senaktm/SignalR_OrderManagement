@@ -1,0 +1,55 @@
+﻿@model List<SignalR_WebUI.Dtos.CategoryDtos.ResultCategoryDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/AdminLayout.cshtml";
+}
+
+@* <h1>CategoryIndex</h1> *@
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">Category Transactions</h4>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Category List</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							You can make Category transactions from the table below
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Category Name</th>
+									<th scope="col">Category Status</th>
+									<th scope="col">Delete</th>
+									<th scope="col">Edit</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<td>@item.CategoryID</td>
+										<td>@item.CategoryName</td>
+										<td>@item.CategoryStatus</td>
+										<td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Delete</a></td>
+										<td><a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-primary">Edit</a></td>
+									</tr>
+								}
+					 
+							</tbody>
+
+                        </table>
+						<td><a href="/Category/CreateCategory/" class="btn btn-success">Add New Category</a></td>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model SignalR_WebUI.Dtos.ProductDtos.CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/AdminLayout/AdminLayout.cshtml";
+}
+
+@* <h1>CreateProduct</h1> *@
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Product Transactions</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Add Product</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="productImage">Product Image :</label>
+                                <input type="text" class="form-control" id="productImage" asp-for="ProductImageUrl" placeholder="Enter Product Image Url">
+                            </div>
+                            <div class="form-group">
+                                <label for="productName">Product Name :</label>
+                                <input type="text" class="form-control" id="productName" asp-for="ProductName" placeholder="Enter Product Name">
+                            </div>
+                     
+                            <div class="form-group">
+                                <label for="productPrice">Product Price :</label>
+                                <input type="text" class="form-control" id="productPrice" asp-for="ProductPrice" placeholder="Enter Product Price">
+                            </div>
+                            <div class="form-group">
+                                <label for="productDescription">Product Description :</label>
+                                <input type="text" class="form-control" id="productDescription" asp-for="ProductDescription" placeholder="Enter Product Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="productCategory">Product Category :</label>
+                                @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.category_value, new {@class="form-control"})
+                            </div>
+                            <div class="form-group">
+                                <label for="productStatus">Product Status :</label>
+                                <input type="text" class="form-control" id="productStatus" asp-for="ProductStatus" placeholder="Enter Product Status">
+                            </div>
+
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Add Product</button>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
