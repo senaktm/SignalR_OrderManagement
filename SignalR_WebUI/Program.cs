@@ -1,18 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddCors(opt =>
-{
-    opt.AddPolicy("CorsPolicy", builder =>
-    {
-        builder.AllowAnyHeader()
-        .AllowAnyMethod()
-        .SetIsOriginAllowed((host) => true)
-        .AllowCredentials();
-    });
-});
 
-builder.Services.AddSignalR();
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
@@ -26,7 +17,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-app.UseCors("CorsPolicy");
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
