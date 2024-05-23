@@ -26,7 +26,37 @@ namespace SignalR_API.Controllers
             var values = _mapper.Map<List<ResultProductDto>>(_productService.TGetListAll());
             return Ok(values);
         }
-        [HttpPost]
+		[HttpGet("ProductCount")]
+		public IActionResult ProductCount()
+		{
+			
+			return Ok(_productService.TProductCount());
+		}
+		[HttpGet("ProductNamebyMaxPrice")]
+		public IActionResult ProductNamebyMaxPrice()
+		{
+
+			return Ok(_productService.TProductNamebyMaxPrice());
+		}
+		[HttpGet("ProductNamebyMinPrice")]
+		public IActionResult ProductNamebyMinPrice()
+		{
+
+			return Ok(_productService.TProductNamebyMinPrice());
+		}
+		[HttpGet("ProductPriceAvg")]
+		public IActionResult ProductPriceAvg()
+		{
+
+			return Ok(_productService.TProductPriceAvg());
+		}
+		[HttpGet("ProductPriceAvgbyCategory")]
+		public IActionResult ProductPriceAvgbyCategory(string category)
+		{
+
+			return Ok(_productService.TProductPriceAvgbyCategory(category));
+		}
+		[HttpPost]
         public IActionResult CreateProduct(CreateProductDto createProductDto)
         {
             _productService.TAdd( new Product()
