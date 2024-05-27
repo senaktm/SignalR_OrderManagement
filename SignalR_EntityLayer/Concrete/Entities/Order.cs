@@ -14,6 +14,6 @@ namespace SignalR.EntityLayer.Concrete.Entities
 		public DateTime OrderDate { get; set; }
 		public decimal OrderTotalPrice {get; set; }
 		public bool isActive { get; set; }
-		public List<OrderDetail> OrderDetails { get; set; }
+	
 	}
 }
