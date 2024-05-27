@@ -30,7 +30,16 @@ namespace SignalR_API.Controllers
 			return Ok(_orderService.TLastOrderPrice());
 		}
 
+		[HttpGet("TodayTotalPrice")]
+		public IActionResult TodayTotalPrice()
+		{
+			return Ok(_orderService.TTodayTotalPrice());
+		}
+		[HttpGet("PassiveOrderTableNumber")]
+		public IActionResult PassiveOrderTableNumber()
+		{
+			return Ok(_orderService.TPassiveOrderTableNumber());
+		}
 
-		
 	}
 }
